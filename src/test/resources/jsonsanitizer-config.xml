@@ -12,8 +12,10 @@
 
     <jsonsanitizer:config />
     <flow name="testFlow">
+    	<logger message="#['\n' + message + '\n']" level="INFO" doc:name="Logger"/>
     	<logger message="#['\n' + 'before' + '\n'] #[payload + '\n']" level="INFO" doc:name="Logger"/>
         <jsonsanitizer:sanitize doc:name="JsonSanitizer"/>
+        <logger message="#['\n' + message + '\n']" level="INFO" doc:name="Logger"/>
         <logger message="#['\n' + 'after' + '\n'] #[payload + '\n']" level="INFO" doc:name="Logger"/>
     </flow>
 </mule>

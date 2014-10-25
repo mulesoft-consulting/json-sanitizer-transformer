@@ -29,7 +29,7 @@ public class JsonSanitizerConnector {
 	 */
 	@Transformer(sourceTypes = { String.class })
 	public static String sanitize(final String input) {
-		if("NullPayload".equals(input)){
+		if("{NullPayload}".equals(input)){
 			return JsonSanitizer.sanitize(null);
 		}
 		return JsonSanitizer.sanitize(input);
