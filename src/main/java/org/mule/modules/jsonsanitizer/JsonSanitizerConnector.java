@@ -5,17 +5,20 @@
 
 package org.mule.modules.jsonsanitizer;
 
+import org.mule.api.annotations.Category;
 import org.mule.api.annotations.Connector;
+import org.mule.api.annotations.Module;
 import org.mule.api.annotations.Transformer;
 
 import com.google.json.JsonSanitizer;
 
 /**
- * Anypoint Connector
+ * 
  * 
  * @author MuleSoft, Inc.
  */
-@Connector(name = "jsonsanitizer", schemaVersion = "1.0", friendlyName = "Json Sanitizer")
+@Module(name = "jsonsanitizer", schemaVersion = "1.0", friendlyName = "JSON Sanitizer", description="Sanitizes JSON input to help prevent bad side affects")
+@Category(name = "org.mule.tooling.category.transformers", description = "Transformers")
 public class JsonSanitizerConnector {
 	/**
 	 * Sanitize JSON
