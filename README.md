@@ -39,10 +39,10 @@ The sanitizer fixes missing punctuation, end quotes, and mismatched or missing c
 ##Output
 The output is well-formed JSON as defined by RFC 4627. The output satisfies three additional properties:
 
-The output will not contain the substring (case-insensitively) "</script" so can be embedded inside an HTML script element without further encoding.
-The output will not contain the substring "]]>" so can be embedded inside an XML CDATA section without further encoding.
-The output is a valid Javascript expression, so can be parsed by Javascript's eval builtin (after being wrapped in parentheses) or by JSON.parse. Specifically, the output will not contain any string literals with embedded JS newlines (U+2028 Paragraph separator or U+2029 Line separator).
-The output contains only valid Unicode scalar values (no isolated UTF-16 surrogates) that are allowed in XML unescaped.
+* The output will not contain the substring (case-insensitively) "</script" so can be embedded inside an HTML script element without further encoding.
+* The output will not contain the substring "]]>" so can be embedded inside an XML CDATA section without further encoding.
+* The output is a valid Javascript expression, so can be parsed by Javascript's eval builtin (after being wrapped in parentheses) or by JSON.parse. Specifically, the output will not contain any string literals with embedded JS newlines (U+2028 Paragraph separator or U+2029 Line separator).
+* The output contains only valid Unicode scalar values (no isolated UTF-16 surrogates) that are allowed in XML unescaped.
 
 ##Security
 Since the output is well-formed JSON, passing it to JavaScript's 'eval will have no side-effects and no free variables, so is neither a code-injection vector, nor a vector for exfiltration of secrets.
