@@ -22,17 +22,17 @@ Pass a JSON String to this transformer and it will return a sanitized JSON Strin
 ##Input
 The sanitizer takes JSON like content, and interprets it as JS eval would. Specifically, it deals with these non-standard constructs.
 
-*'...'	Single quoted strings are converted to JSON strings.
-*\xAB	Hex escapes are converted to JSON unicode escapes.
-*\012	Octal escapes are converted to JSON unicode escapes.
-*0xAB	Hex integer literals are converted to JSON decimal numbers.
-*012	Octal integer literals are converted to JSON decimal numbers.
-*+.5	Decimal numbers are coerced to JSON's stricter format.
-*[0,,2]	Elisions in arrays are filled with null.
-*[1,2,3,]	Trailing commas are removed.
-*{foo:"bar"}	Unquoted property names are quoted.
-*//comments	JS style line and block comments are removed.
-*(...)	Grouping parentheses are removed.
+* '...'	Single quoted strings are converted to JSON strings.
+* \xAB	Hex escapes are converted to JSON unicode escapes.
+* \012	Octal escapes are converted to JSON unicode escapes.
+* 0xAB	Hex integer literals are converted to JSON decimal numbers.
+* 012	Octal integer literals are converted to JSON decimal numbers.
+* +.5	Decimal numbers are coerced to JSON's stricter format.
+* [0,,2]	Elisions in arrays are filled with null.
+* [1,2,3,]	Trailing commas are removed.
+* {foo:"bar"}	Unquoted property names are quoted.
+* //comments	JS style line and block comments are removed.
+* (...)	Grouping parentheses are removed.
 
 The sanitizer fixes missing punctuation, end quotes, and mismatched or missing close brackets. If an input contains only white-space then the valid JSON string null is substituted.
 
