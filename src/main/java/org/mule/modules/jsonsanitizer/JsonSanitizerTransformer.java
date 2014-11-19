@@ -19,7 +19,7 @@ import com.google.json.JsonSanitizer;
  */
 @Module(name = "jsonsanitizer", schemaVersion = "1.0", friendlyName = "JSON Sanitizer", description="Sanitizes JSON input to help prevent bad side affects")
 @Category(name = "org.mule.tooling.category.transformers", description = "Transformers")
-public class JsonSanitizerConnector {
+public class JsonSanitizerTransformer {
 	/**
 	 * Sanitize JSON
 	 * <p/>
